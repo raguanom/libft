@@ -1,0 +1,11 @@
+# Ignore all test files:
+main.c 
+
+# Ignore executables:
+*.a
+*.o
+main
+prog
+
+# Ignore vscode dir:
+.vscode
