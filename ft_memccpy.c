@@ -17,7 +17,7 @@ void *ft_memccpy(void *dest, void *src, int c, size_t n){
     if (dest == src) return NULL;
     
     int i;
-    i = 0;
+    i = n;
     while (i > 0){
         ((char *)dest)[i] = ((char *)src)[i];
         if (((char*)dest)[i] == c)

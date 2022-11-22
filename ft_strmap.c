@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: randolph <just_a_fan_of_42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 05:56:06 by randolph          #+#    #+#             */
-/*   Updated: 2022/11/20 05:56:08 by randolph         ###   ########.fr       */
+/*   Created: 2022/11/20 20:53:29 by randolph          #+#    #+#             */
+/*   Updated: 2022/11/20 20:53:31 by randolph         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dest, void *src, size_t n){
-    if (!dest || !src)  return NULL;
-    if (dest == src) return NULL;
-    
-    int i;
-    i = n;
-    while (i > 0){
-        ((char *)dest)[i] = ((char *)src)[i];
-        i--;
+char *ft_strmap(char const *s, char (*f)(char)){
+    char *ret;
+
+    if (s != NULL && f != NULL){
+        ret = ft_strnew(ft_strlen(s));
+        while (*s && *ret){
+            ret = f(s);
+            ret++;
+            s++;
+        }
+        return ret;
     }
-    return (dest);
+    return NULL;
 }

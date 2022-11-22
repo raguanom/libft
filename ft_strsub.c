@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: randolph <just_a_fan_of_42>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 05:56:06 by randolph          #+#    #+#             */
-/*   Updated: 2022/11/20 05:56:08 by randolph         ###   ########.fr       */
+/*   Created: 2022/11/20 21:22:17 by randolph          #+#    #+#             */
+/*   Updated: 2022/11/20 21:22:20 by randolph         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dest, void *src, size_t n){
-    if (!dest || !src)  return NULL;
-    if (dest == src) return NULL;
-    
+char *ft_strsub(char const *s, unsigned int start, size_t len){
+    char *ret = ft_strnew(ft_strlen((char *)s));
     int i;
-    i = n;
-    while (i > 0){
-        ((char *)dest)[i] = ((char *)src)[i];
-        i--;
+
+    i = 0;
+    while (i < len){
+        ret[i] = s[start];
+        start++;
+        i++;
     }
-    return (dest);
+    return ret;
 }

@@ -12,15 +12,14 @@
 
 #include "libft.h"
 
-int ft_strcpy(char *dest, char *src){
+char *ft_strcpy(char *dest, char *src){
     if (!dest || !src) return NULL;
     
     int i;
     i = 0;
-    while (i > 0){
+    while (src[i]){
         dest[i] = src[i];
-        i--;
+        i++;
     }
     return (dest);
-
 }

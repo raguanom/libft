@@ -9,3 +9,6 @@ prog
 
 # Ignore vscode dir:
 .vscode
+
+# Ignore test folder:
+TEST/*
